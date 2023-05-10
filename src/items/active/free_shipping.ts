@@ -1,4 +1,4 @@
-import { CollectibleType, ItemPoolType, TrinketType } from "isaac-typescript-definitions";
+import { ItemPoolType, TrinketType } from "isaac-typescript-definitions";
 import { findFreePosition } from "isaacscript-common";
 import { MOD } from "../../mod";
 

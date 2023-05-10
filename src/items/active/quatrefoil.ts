@@ -30,7 +30,6 @@ export function cacheQuatrefoil
     {
         const index = getPlayerIndex(player);
         const data = v.room.quatrefoil_luck.getAndSetDefault(index);
-        print(v.room.quatrefoil_luck)
         player.Luck += data;
         if (player.HasCollectible(CollectibleTypeLTT.QUATREFOIL))
         {

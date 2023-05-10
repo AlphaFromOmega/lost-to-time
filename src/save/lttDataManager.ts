@@ -21,6 +21,7 @@ export const v =
 
     // These variables are reset at the beginning of every room.
     room: {
-      quatrefoil_luck: new DefaultMap<PlayerIndex, int>((0),
+      quatrefoil_luck: new DefaultMap<PlayerIndex, int>(0),
+      deathFrame: new DefaultMap<PlayerIndex, int>(-1),
     },
 };

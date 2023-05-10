@@ -28,4 +28,16 @@
     maxcharges="6"
     cache="luck"
   />
+  <passive
+    name="Life Insurance"
+    description="Lifetime debt, free of charge!"
+    gfx="life_insurance.png"
+    quality="3"
+  />
+  <passive
+    name="Life Insurance"
+    description="Lifetime debt, free of charge!"
+    gfx="life_insurance.png"
+    quality="3"
+  />
 </items>
