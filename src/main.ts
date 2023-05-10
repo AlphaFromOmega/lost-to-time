@@ -1,17 +1,32 @@
-const MOD_NAME = "lost-to-time";
+import { ISCFeature, ModCallbackCustom, upgradeMod } from "isaacscript-common";
+import { ModCallback } from "isaac-typescript-definitions";
+import { initializeEID } from "./compat/eid";
+import { postUpdate } from "./callbacks/postUpdate";
+import { useItem } from "./callbacks/useItem";
 
-export function main(): void {
-  // Instantiate a new mod object, which grants the ability to add callback functions that
-  // correspond to in-game events
-  const mod = RegisterMod(MOD_NAME, 1);
+const MOD_NAME = "Lost To Time";
+export function main(): void
+{
+	const modVanilla = RegisterMod(MOD_NAME, 1);
 
-  // Set a callback function that corresponds to when a new run is started
-  mod.AddCallback(ModCallbacks.MC_POST_GAME_STARTED, postGameStarted);
+	const features = [
+        ISCFeature.SAVE_DATA_MANAGER
+	] as const;
 
-  // Print an initialization message to the "log.txt" file
-  Isaac.DebugString(`${MOD_NAME} initialized.`);
+	const mod = upgradeMod(modVanilla, features);
+
+    if (EID !== undefined)
+    {
+        initializeEID(EID);
+    }
+    initializeCallbacks(mod);
 }
 
-function postGameStarted() {
-  Isaac.DebugString("Callback triggered: MC_POST_GAME_STARTED");
+function initializeCallbacks(mod : Mod)
+{
+    mod.AddCallback(ModCallback.POST_UPDATE, postUpdate);
+    mod.AddCallback(ModCallback.POST_USE_ITEM, useItem);
 }
+
+
+Isaac.DebugString("Initiated mod: Lost To Time");

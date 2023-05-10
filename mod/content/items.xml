@@ -1,0 +1,28 @@
+<items gfxroot="gfx/items/" version="1">
+  <active
+    name="Cursed D6"
+    description="Questionable Rerolls"
+    gfx="cursed_d6.png"
+    quality="3"
+    maxcharges="6"
+  />
+  <active
+    name="Cursed Box"
+    description="Curselessly Cursed"
+    gfx="cursed_box.png"
+    quality="1"
+    maxcharges="0"
+  />
+  <active
+    name="Free Shipping"
+    description="With next day delivery!"
+    gfx="free_shipping.png"
+    maxcharges="6"
+  />
+  <active
+    name="Quatrefoil"
+    description="Lucky me!"
+    gfx="quatrefoil.png"
+    maxcharges="6"
+  />
+</items>

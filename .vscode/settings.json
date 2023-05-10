@@ -1,55 +1,52 @@
 // These are Visual Studio Code settings that should apply to this particular repository
 {
-  // ----------------
-  // Vanilla settings
-  // ----------------
+    // ----------------
+    // Vanilla settings
+    // ----------------
 
-  // This matches the Airbnb JavaScript style guide
-  "editor.rulers": [100],
-  "editor.tabSize": 2,
+    // This matches the Airbnb JavaScript style guide
+    "editor.rulers": [200],
+    "editor.tabSize": 4,
 
-  "files.associations": {
-    "*.anm2": "xml", // anm2 files are just XML files
-    "*.dat": "json" // Nearly all mods save JSON to the "save#.dat" file
-  },
+    "files.associations": {
+      "*.anm2": "xml", // anm2 files are just XML files
+      "*.dat": "json" // Nearly all mods save JSON to the "save#.dat" file
+    },
 
-  // Linux line endings are used in this project
-  "files.eol": "\n",
+    // Linux line endings are used in this project
+    "files.eol": "\n",
 
-  // Automatically removing all trailing whitespace when saving a file
-  "files.trimTrailingWhitespace": true,
+    // Automatically removing all trailing whitespace when saving a file
+    "files.trimTrailingWhitespace": true,
 
-  // Configure glob patterns for excluding files and folders in full text searches and quick open
-  "search.exclude": {
-    "**/mod/main.lua": true,
-    "**/*.png": true,
-    "**/*.wav": true
-  },
+    // Configure glob patterns for excluding files and folders in full text searches and quick open
+    "search.exclude": {
+      "**/mod/main.lua": true,
+      "**/*.png": true,
+      "**/*.wav": true
+    },
 
-  // -----------------
-  // Language settings
-  // -----------------
+    // -----------------
+    // Language settings
+    // -----------------
 
-  // By default, VSCode will not automatically fill-in function arguments
-  "javascript.suggest.completeFunctionCalls": true,
-  "typescript.suggest.completeFunctionCalls": true,
+    // By default, VSCode will not automatically fill-in function arguments
+    "javascript.suggest.completeFunctionCalls": true,
+    "typescript.suggest.completeFunctionCalls": true,
 
-  // Automatically run the formatter when certain files are saved
-  "[javascript]": {
-    "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2
-  },
-  "[typescript]": {
-    "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2
-  },
-  "[xml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2
-  }
+    "prettier.useTabs": true,
+    "prettier.tabWidth": 4,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/.vscode": true,
+      "**/.vs": true,
+      "**/.github": true,
+      "**/plugins": true
+    },
+    "explorerExclude.backup": {}
 }

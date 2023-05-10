@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <metadata>
-  <name>lost-to-time</name>
-  <directory>lost-to-time</directory>
-  <description>lost-to-time is a currently a work in progress.</description>
-  <version>1.0</version>
-  <visibility />
+	<name>Lost to Time</name>
+	<directory>lost-to-time</directory>
+	<description>
+		Sometimes a mod is left abandoned, whether it is the mod maker no longer supporting the mod or the mod is removed from the workshop we
+	</description>
+	<version>1.0</version>
+	<visibility />
 </metadata>
