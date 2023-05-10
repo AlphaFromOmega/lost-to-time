@@ -16,6 +16,7 @@
   <active
     name="Free Shipping"
     description="With next day delivery!"
+    quality="2"
     gfx="free_shipping.png"
     maxcharges="6"
   />
@@ -23,6 +24,8 @@
     name="Quatrefoil"
     description="Lucky me!"
     gfx="quatrefoil.png"
+    quality="2"
     maxcharges="6"
+    cache="luck"
   />
 </items>

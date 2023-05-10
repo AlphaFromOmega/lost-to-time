@@ -38,4 +38,3 @@ export function initializeEID(eid : EIDInterface): void
         eid.addCollectible(CollectibleTypeLTT.WAKE_ME_UP, "Doubles ALL enemy and pickup spawns.");
     // #endregion
 }
-

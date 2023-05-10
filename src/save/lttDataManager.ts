@@ -1,3 +1,5 @@
+import { DefaultMap, PlayerIndex } from "isaacscript-common";
+
 // eslint-disable-next-line isaacscript/require-v-registration
 export const v =
 {
@@ -9,6 +11,7 @@ export const v =
     // These variables are reset at the beginning of every run.
     run: {
       cursed_boxes: 0,
+      hiddenItems: new DefaultMap<PtrHash, int>(0)
     },
 
     // These variables are reset at the beginning of every level.
@@ -18,6 +21,6 @@ export const v =
 
     // These variables are reset at the beginning of every room.
     room: {
-      foo4: 0,
+      quatrefoil_luck: new DefaultMap<PlayerIndex, int>((0),
     },
 };

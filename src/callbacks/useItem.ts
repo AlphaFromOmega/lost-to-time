@@ -2,7 +2,8 @@ import { CollectibleType, UseFlag } from "isaac-typescript-definitions";
 import { CollectibleTypeLTT } from "../enums/CollectibleTypeLTT";
 import { useItemCursedD6 } from "../items/active/cursed_d6";
 import { useItemCursedBox } from "../items/active/cursed_box";
-import { useFreeShipping } from "../items/active/free_shipping";
+import { useItemFreeShipping } from "../items/active/free_shipping";
+import { useItemQuatrefoil } from "../items/active/quatrefoil";
 
 export function useItem
 (
@@ -15,6 +16,7 @@ export function useItem
 )
 : boolean | { Discharge: boolean; Remove: boolean; ShowAnim: boolean } | undefined
 {
+    const hasCarBattery = player.HasCollectible(CollectibleType.CAR_BATTERY) ? 2 : 1;
     switch (collectibleType)
     {
         case (CollectibleTypeLTT.CURSED_D6):
@@ -23,11 +25,15 @@ export function useItem
         }
         case (CollectibleTypeLTT.CURSED_BOX):
         {
-            return useItemCursedBox(player);
+            return Array.from({length: hasCarBattery}, () => useItemCursedBox(player))[0];
         }
         case (CollectibleTypeLTT.FREE_SHIPPING):
         {
-            return useFreeShipping(player);
+            return useItemFreeShipping(player);
+        }
+        case (CollectibleTypeLTT.QUATREFOIL):
+        {
+            return useItemQuatrefoil(player);
         }
         default:
         {
