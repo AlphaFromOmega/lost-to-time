@@ -1,6 +1,0 @@
-
-
-export function initializeDataManager() : void
-{
-
-}

@@ -1,6 +1,5 @@
-import { CollectibleType, EffectVariant, EntityFlag, ItemPoolType, LevelCurse, UseFlag } from "isaac-typescript-definitions";
-import { getCollectibles, getRandom, getRandomFloat, getRandomSeed, getRoomItemPoolType, getStartSeedString, itemConfig, logUseFlags, setCollectibleBlind, setCollectibleSprite, setCollectibleSubType, spawnEffect } from "isaacscript-common";
-import { CollectibleTypeLTT } from "../../enums/CollectibleTypeLTT";
+import { CollectibleType, EffectVariant, LevelCurse } from "isaac-typescript-definitions";
+import { getCollectibles, getRandomFloat, getRoomItemPoolType, itemConfig, setCollectibleBlind, setCollectibleSubType, spawnEffect } from "isaacscript-common";
 
 const rLog = math.log(2)/math.log(5)
 

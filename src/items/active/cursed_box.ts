@@ -1,10 +1,13 @@
-import { BombSubType, CoinSubType, HeartSubType, KeySubType, LevelCurse, LevelCurseZero } from "isaac-typescript-definitions";
-import { addFlag, bitFlags, findFreePosition, removeCollectible, spawnBomb, spawnBombPickup, spawnCoin, spawnHeart, spawnKey } from "isaacscript-common";
+import { BombSubType, CoinSubType, HeartSubType, ItemConfigTag, KeySubType, LevelCurse, PickupVariant } from "isaac-typescript-definitions";
+import { findFreePosition, getCollectibleTags, hasFlag, removeCollectible, setCollectibleSubType, spawnBombPickup, spawnCoin, spawnHeart, spawnKey } from "isaacscript-common";
 import { CollectibleTypeLTT } from "../../enums/CollectibleTypeLTT";
+import { v } from "../../save/lttDataManager";
 
-export function useItemCursedBox(
+export function useItemCursedBox
+(
     player: EntityPlayer
-) : boolean
+)
+: boolean
 {
     spawnKey(KeySubType.NULL, findFreePosition(player.Position));
     spawnCoin(CoinSubType.NULL, findFreePosition(player.Position));
@@ -13,6 +16,24 @@ export function useItemCursedBox(
 
     Game().GetLevel().RemoveCurses(((1 << 32) - 1) as BitFlags<LevelCurse>); // Nukes all curses
 
+    v.run.cursed_boxes++;
+    print(`Boxes to spawn - ${v.run.cursed_boxes}`);
+
     removeCollectible(player, CollectibleTypeLTT.CURSED_BOX);
     return true;
+}
+
+export function pickupSpawnCursedBox
+(
+    pickup: EntityPickup,
+)
+: void
+{
+    // eslint-disable-next-line isaacscript/strict-enums
+    if (v.run.cursed_boxes <= 0 || pickup.Variant !== PickupVariant.COLLECTIBLE || pickup.SubType === CollectibleTypeLTT.CURSED_BOX || hasFlag(getCollectibleTags(pickup), ItemConfigTag.QUEST))
+    {
+        return;
+    }
+    v.run.cursed_boxes--;
+    setCollectibleSubType(pickup, CollectibleTypeLTT.CURSED_BOX);
 }
