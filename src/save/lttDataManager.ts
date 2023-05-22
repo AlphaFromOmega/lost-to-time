@@ -10,7 +10,8 @@ export const v =
 
     // These variables are reset at the beginning of every run.
     run: {
-      cursed_boxes: 0,
+      cursedBoxes: 0,
+      obsessionConditionals: 0,
       hiddenItems: new DefaultMap<PtrHash, boolean>(false),
       droppedItems: new DefaultMap<PtrHash, boolean>(false)
     },
@@ -22,7 +23,7 @@ export const v =
 
     // These variables are reset at the beginning of every room.
     room: {
-      quatrefoil_luck: new DefaultMap<PlayerIndex, int>(0),
+      quatrefoilLuck: new DefaultMap<PlayerIndex, int>(0),
       deathFrame: new DefaultMap<PlayerIndex, int>(-1),
     },
 };

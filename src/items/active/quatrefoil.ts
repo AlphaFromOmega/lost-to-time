@@ -10,9 +10,9 @@ export function useItemQuatrefoil
 : boolean
 {
     const index = getPlayerIndex(player);
-    let data = v.room.quatrefoil_luck.getAndSetDefault(index);
+    let data = v.room.quatrefoilLuck.getAndSetDefault(index);
     data += 10;
-    v.room.quatrefoil_luck.set(index, data);
+    v.room.quatrefoilLuck.set(index, data);
     player.AddCacheFlags(CacheFlag.LUCK);
     player.EvaluateItems();
     return true;
@@ -29,7 +29,7 @@ export function cacheQuatrefoil
     if (hasFlag(cacheFlag, CacheFlag.LUCK))
     {
         const index = getPlayerIndex(player);
-        const data = v.room.quatrefoil_luck.getAndSetDefault(index);
+        const data = v.room.quatrefoilLuck.getAndSetDefault(index);
         player.Luck += data;
         if (player.HasCollectible(CollectibleTypeLTT.QUATREFOIL))
         {

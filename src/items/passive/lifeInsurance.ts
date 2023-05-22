@@ -1,5 +1,5 @@
 import { CollectibleType, SoundEffect, UseFlag } from "isaac-typescript-definitions";
-import { addFlag, sfxManager } from 'isaacscript-common';
+import { addFlag, sfxManager } from "isaacscript-common";
 import { CollectibleTypeLTT } from "../../enums/CollectibleTypeLTT";
 
 export function fatalDamageLifeInsurance(player : EntityPlayer): boolean | undefined

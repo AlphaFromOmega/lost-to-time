@@ -4,6 +4,7 @@ import { playerDeath } from "./playerDeath";
 import { playerUpdateSpawnGodsBlessing } from "../items/passive/godsBlessing";
 import { pickupSpawnDiploptions } from "../items/passive/diploptions";
 import { scheduleUpdate } from "../helper/scheduler";
+import { postUpdateObsession } from "../items/passive/obsession";
 
 // eslint-disable-next-line isaacscript/require-variadic-function-argument
 const defDead = v.room.deathFrame.getDefaultValue();
@@ -43,6 +44,6 @@ export function postUpdate() : void
             }
         }
     );
-
+    postUpdateObsession();
     scheduleUpdate();
 }

@@ -1,5 +1,6 @@
 import { CacheFlag } from "isaac-typescript-definitions";
 import { cacheQuatrefoil } from "../items/active/quatrefoil";
+import { cacheObsession } from "../items/passive/obsession";
 
 export function evaluateCache
 (
@@ -8,5 +9,6 @@ export function evaluateCache
 )
 : void
 {
+    cacheObsession(player, cacheFlag);
     cacheQuatrefoil(player, cacheFlag);
 }
