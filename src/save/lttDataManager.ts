@@ -11,7 +11,8 @@ export const v =
     // These variables are reset at the beginning of every run.
     run: {
       cursed_boxes: 0,
-      hiddenItems: new DefaultMap<PtrHash, int>(0)
+      hiddenItems: new DefaultMap<PtrHash, boolean>(false),
+      droppedItems: new DefaultMap<PtrHash, boolean>(false)
     },
 
     // These variables are reset at the beginning of every level.

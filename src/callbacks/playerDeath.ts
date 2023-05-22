@@ -6,7 +6,7 @@ export function playerDeath(
 )
 : void
 {
-    let die : Boolean | undefined;
+    let die : boolean | undefined;
     const playerDeathFunctions =
     [
         () => fatalDamageLifeInsurance(player),

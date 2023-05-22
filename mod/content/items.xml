@@ -32,12 +32,48 @@
     name="Life Insurance"
     description="Lifetime debt, free of charge!"
     gfx="life_insurance.png"
+    quality="2"
+  />
+  <passive
+    name="Glyph of Consolation"
+    description="May you no longer suffer in vain"
+    gfx="glyph_of_consolation.png"
     quality="3"
   />
   <passive
-    name="Life Insurance"
-    description="Lifetime debt, free of charge!"
-    gfx="life_insurance.png"
+    name="Diploptions"
+    description="No more options!"
+    gfx="diploptions.png"
+    quality="3"
+  />
+  <passive
+    name="Friendly Bombs"
+    description="They'll wait for you +5 bombs"
+    gfx="friendly_bombs.png"
+    quality="3"
+  />
+  <passive
+    name="God's Blessing"
+    description="May you never fear death"
+    gfx="gods_blessing.png"
+    quality="3"
+  />
+  <passive
+    name="Amalgamated Clover"
+    description="I feel lucky?"
+    gfx="amalgamated_clover.png"
+    quality="3"
+  />
+  <passive
+    name="Obsession"
+    description="It must be equal!"
+    gfx="obsession.png"
+    quality="3"
+  />
+  <passive
+    name="Wake Me Up"
+    description="Double Trouble"
+    gfx="wake_me_up.png"
     quality="3"
   />
 </items>

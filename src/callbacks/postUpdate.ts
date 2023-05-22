@@ -1,17 +1,24 @@
-import { forEach, getLastFrameOfAnimation, getPlayerIndex, getPlayers } from "isaacscript-common";
-import { CollectibleTypeLTT } from "../enums/CollectibleTypeLTT";
+import { forEach, getLastFrameOfAnimation, getPickups, getPlayerIndex, getPlayers } from "isaacscript-common";
 import { v } from "../save/lttDataManager";
 import { playerDeath } from "./playerDeath";
+import { playerUpdateSpawnGodsBlessing } from "../items/passive/godsBlessing";
+import { pickupSpawnDiploptions } from "../items/passive/diploptions";
+import { scheduleUpdate } from "../helper/scheduler";
 
 // eslint-disable-next-line isaacscript/require-variadic-function-argument
 const defDead = v.room.deathFrame.getDefaultValue();
 export function postUpdate() : void
 {
-    // Personal implementation for checking when a player has died
     forEach(getPlayers(), player =>
         {
+            // Personal implementation for checking when a player has died
             const index = getPlayerIndex(player);
             let data = v.room.deathFrame.getAndSetDefault(index);
+
+            getPickups().forEach(i => {
+                pickupSpawnDiploptions(i);
+            })
+            playerUpdateSpawnGodsBlessing(player);
             if (player.IsDead())
             {
                 const lf = getLastFrameOfAnimation(player.GetSprite());
@@ -36,4 +43,6 @@ export function postUpdate() : void
             }
         }
     );
+
+    scheduleUpdate();
 }

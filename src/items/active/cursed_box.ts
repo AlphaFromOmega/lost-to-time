@@ -17,7 +17,6 @@ export function useItemCursedBox
     Game().GetLevel().RemoveCurses(((1 << 32) - 1) as BitFlags<LevelCurse>); // Nukes all curses
 
     v.run.cursed_boxes++;
-    print(`Boxes to spawn - ${v.run.cursed_boxes}`);
 
     removeCollectible(player, CollectibleTypeLTT.CURSED_BOX);
     return true;
@@ -29,8 +28,7 @@ export function pickupSpawnCursedBox
 )
 : void
 {
-    // eslint-disable-next-line isaacscript/strict-enums
-    if (v.run.cursed_boxes <= 0 || pickup.Variant !== PickupVariant.COLLECTIBLE || pickup.SubType === CollectibleTypeLTT.CURSED_BOX || hasFlag(getCollectibleTags(pickup), ItemConfigTag.QUEST))
+    if (v.run.cursed_boxes <= 0 || pickup.Variant !== PickupVariant.COLLECTIBLE || pickup.SubType === CollectibleTypeLTT.CURSED_BOX || hasFlag(getCollectibleTags(pickup), ItemConfigTag.QUEST) || v.run.droppedItems.getAndSetDefault(GetPtrHash(pickup)))
     {
         return;
     }

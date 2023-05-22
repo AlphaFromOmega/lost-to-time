@@ -1,5 +1,5 @@
 import { CollectibleType, EffectVariant, LevelCurse } from "isaac-typescript-definitions";
-import { getCollectibles, getRandomFloat, getRoomItemPoolType, itemConfig, setCollectibleBlind, setCollectibleSubType, spawnEffect } from "isaacscript-common";
+import { getCollectibles, getRandomFloat, getRoomItemPoolType, itemConfig, removeCollectibleFromPools, setCollectibleBlind, setCollectibleSubType, spawnEffect } from "isaacscript-common";
 
 const rLog = math.log(2)/math.log(5)
 
@@ -32,6 +32,7 @@ export function useItemCursedD6() : boolean
             i++;
         }
         spawnEffect(EffectVariant.POOF_1, 0, collectible.Position);
+        removeCollectibleFromPools(item);
         setCollectibleSubType(collectible, item);
         setCollectibleBlind(collectible);
     }

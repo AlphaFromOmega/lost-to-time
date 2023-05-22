@@ -1,4 +1,5 @@
 import { DamageFlag } from "isaac-typescript-definitions";
+import { playerDamageGlyphOfConsolation } from "../items/passive/glyphOfConsolation";
 
 export function entityTakeDmgPlayer(
     player: EntityPlayer,
@@ -9,6 +10,17 @@ export function entityTakeDmgPlayer(
 )
 : boolean | undefined
 {
-    print("Took Damage!")
-    return undefined;
+    let damage : boolean | undefined;
+    const playerDamageFunctions =
+    [
+        () => playerDamageGlyphOfConsolation(player),
+    ];
+
+    for (const func of playerDamageFunctions) {
+        damage = func();
+        if (damage !== undefined) {
+            break;
+        }
+    }
+    return damage;
 }
